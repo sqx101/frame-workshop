@@ -3,10 +3,12 @@ import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.get('/', (c) => c.html(
+app.get('/', (c) => c.text(
   `<!DOCTYPE html>
   <html>
     <head>
+      <meta property="og:title" content= "Nouns en Max Pain" >
+      <meta property="og:image" content="https://i.postimg.cc/ry0c7285/Nouns-en-MAXPAIN.png" />
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://i.postimg.cc/ry0c7285/Nouns-en-MAXPAIN.png" />
     </head>
@@ -14,4 +16,7 @@ app.get('/', (c) => c.html(
 ));
 console.log ('server is running')
 
-serve(app);
+serve({
+  fetch: app.fetch,
+  port: process.env.PORT as number || 3000
+}));
