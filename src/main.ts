@@ -14,9 +14,8 @@ app.get('/', (c) => c.text(
     </head>
   </html>`
 ));
-console.log ('server is running')
-
+console.log('server is running')
 serve({
   fetch: app.fetch,
-  port process.env.PORT || 3000
+  port: parseInt(process.env.PORT || '3000'),
 });
