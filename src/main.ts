@@ -18,5 +18,5 @@ console.log ('server is running')
 
 serve({
   fetch: app.fetch,
-  port: process.env.PORT as number || 3000
-}));
+  port process.env.PORT || 3000
+});
