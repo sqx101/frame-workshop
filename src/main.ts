@@ -7,6 +7,7 @@ app.get('/', (c) => c.text(
   `<!DOCTYPE html>
   <html>
     <head>
+      <meta property="title" content="Nouns en max Pain" />
       <meta property="og:image" content="https://i.postimg.cc/ry0c7285/Nouns-en-MAXPAIN.png" />
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://i.postimg.cc/ry0c7285/Nouns-en-MAXPAIN.png" />
