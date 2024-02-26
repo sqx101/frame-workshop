@@ -106,22 +106,23 @@ app.post("/res", async (c) => {
   const { buttonIndex } = frameData.untrustedData;
 
   switch (buttonIndex) {
+    // Example adjustment for case 1 response
     case 1: {
-      return c.render(<Layout imgUrl="https://i.postimg.cc/kXzJRQW8/Brian-and-Toshi.png" />);
+      return c.html(<Layout imgUrl="https://i.postimg.cc/kXzJRQW8/Brian-and-Toshi.png" />, 200);
     }
     case 2: {
-      return c.render(<Layout imgUrl="https://i.postimg.cc/BnFqTjCz/toshi-the-cat.png" />);
+      return c.html(<Layout imgUrl="https://i.postimg.cc/BnFqTjCz/toshi-the-cat.png" />, 200);
     }
     case 3: {
-      return c.render(<Layout imgUrl="https://i.postimg.cc/kXBM51Rq/nft-toshi.png" />);
+      return c.html(<Layout imgUrl="https://i.postimg.cc/kXBM51Rq/nft-toshi.png" />, 200);
     }
     case 4: {
-      return c.render(<Layout imgUrl="https://i.postimg.cc/0Nq9c9Wy/Toshi-Tools.jpg" />);
+      return c.html(<Layout imgUrl="https://i.postimg.cc/0Nq9c9Wy/Toshi-Tools.jpg" />, 200);
     }
 
     default: {
       //const buttonData = ["Btn 1 d", "Btn 2 d", "Btn 3 d", "Btn 4 d"]
-      return c.render(<Layout imgUrl="https://i.postimg.cc/QMkhzvwk/Toshi-Coming-Soon.png" />);
+      return c.html(<Layout imgUrl="https://i.postimg.cc/QMkhzvwk/Toshi-Coming-Soon.png" />, 200);
     }
   }
 });
