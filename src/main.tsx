@@ -127,15 +127,12 @@ app.post("/res", async (c) => {
   }
 
   // Constructing the HTML string with the dynamic image URL
-  const htmlResponse = `
-    <!DOCTYPE html>
-    <html>
+  const htmlResponse = 
       <head>
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content="${imageUrl}" />
       </head>
-    </html>
-  `;
+  ;
 
   // Set headers to prevent caching
   c.res.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
