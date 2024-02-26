@@ -137,6 +137,11 @@ app.post("/res", async (c) => {
     </html>
   `;
 
+  // Set headers to prevent caching
+  c.res.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  c.res.headers.set('Pragma', 'no-cache');
+  c.res.headers.set('Expires', '0');
+
   // Sending the response
   return c.html(htmlResponse, 200);
 });
