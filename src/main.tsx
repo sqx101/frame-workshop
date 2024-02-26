@@ -88,7 +88,7 @@ const Layout = ({
 app.get("/", (c) =>
   c.render(
     <Layout
-      imgUrl="https://i.imgur.com/sS717ci.jpg"
+      imgUrl="https://i.postimg.cc/Vs7LmQ6K/toshi-logo.png"
       postUrl="https://frame-workshop.up.railway.app/res"
     />,
   ),
@@ -107,21 +107,21 @@ app.post("/res", async (c) => {
 
   switch (buttonIndex) {
     case 1: {
-      return c.render(<Layout imgUrl="https://i.imgur.com/g4Ll2Dj.png" />);
+      return c.render(<Layout imgUrl="https://i.postimg.cc/kXzJRQW8/Brian-and-Toshi.png" />);
     }
     case 2: {
-      return c.render(<Layout imgUrl="https://i.imgur.com/mnSybOx.jpeg" />);
+      return c.render(<Layout imgUrl="https://i.postimg.cc/BnFqTjCz/toshi-the-cat.png" />);
     }
     case 3: {
-      return c.render(<Layout imgUrl="https://i.imgur.com/eOw6ff3.jpeg" />);
+      return c.render(<Layout imgUrl="https://i.postimg.cc/kXBM51Rq/nft-toshi.png" />);
     }
     case 4: {
-      return c.render(<Layout imgUrl="https://i.imgur.com/5CBUsN1.jpeg" />);
+      return c.render(<Layout imgUrl="https://i.postimg.cc/0Nq9c9Wy/Toshi-Tools.jpg" />);
     }
 
     default: {
       //const buttonData = ["Btn 1 d", "Btn 2 d", "Btn 3 d", "Btn 4 d"]
-      return c.render(<Layout imgUrl="https://i.imgur.com/sS717ci.jpg" />);
+      return c.render(<Layout imgUrl="https://i.postimg.cc/QMkhzvwk/Toshi-Coming-Soon.png" />);
     }
   }
 });
