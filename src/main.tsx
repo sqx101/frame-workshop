@@ -105,26 +105,40 @@ app.post("/res", async (c) => {
 
   const { buttonIndex } = frameData.untrustedData;
 
-  switch (buttonIndex) {
-    // Example adjustment for case 1 response
-    case 1: {
-      return c.html(<Layout imgUrl="https://i.postimg.cc/kXzJRQW8/Brian-and-Toshi.png" />, 200);
-    }
-    case 2: {
-      return c.html(<Layout imgUrl="https://i.postimg.cc/BnFqTjCz/toshi-the-cat.png" />, 200);
-    }
-    case 3: {
-      return c.html(<Layout imgUrl="https://i.postimg.cc/kXBM51Rq/nft-toshi.png" />, 200);
-    }
-    case 4: {
-      return c.html(<Layout imgUrl="https://i.postimg.cc/0Nq9c9Wy/Toshi-Tools.jpg" />, 200);
-    }
+  // This URL will be dynamically determined based on the button clicked
+  let imageUrl;
 
-    default: {
-      //const buttonData = ["Btn 1 d", "Btn 2 d", "Btn 3 d", "Btn 4 d"]
-      return c.html(<Layout imgUrl="https://i.postimg.cc/QMkhzvwk/Toshi-Coming-Soon.png" />, 200);
-    }
+  switch (buttonIndex) {
+    case 1:
+      imageUrl = "https://i.postimg.cc/kXzJRQW8/Brian-and-Toshi.png";
+      break;
+    case 2:
+      imageUrl = "https://i.postimg.cc/BnFqTjCz/toshi-the-cat.png";
+      break;
+    case 3:
+      imageUrl = "https://i.postimg.cc/kXBM51Rq/nft-toshi.png";
+      break;
+    case 4:
+      imageUrl = "https://i.postimg.cc/0Nq9c9Wy/Toshi-Tools.jpg";
+      break;
+    default:
+      imageUrl = "https://i.postimg.cc/QMkhzvwk/Toshi-Coming-Soon.png";
+      break;
   }
+
+  // Constructing the HTML string with the dynamic image URL
+  const htmlResponse = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="${imageUrl}" />
+      </head>
+    </html>
+  `;
+
+  // Sending the response
+  return c.html(htmlResponse, 200);
 });
 
 console.log("sever is running");
